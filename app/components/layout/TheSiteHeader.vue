@@ -17,10 +17,10 @@ const menu = computed(() => [
     name: 'Projects',
     path: '/projects',
   },
-  // {
-  //   name: 'Uses',
-  //   path: '/uses',
-  // },
+  {
+    name: 'Contact',
+    path: '/contact',
+  },
   ...(showAdminLink.value ? [{ name: 'Admin', path: '/admin' }] : []),
 ])
 
@@ -58,7 +58,7 @@ function onPopoverToggle(event: ToggleEvent) {
         <li>
           <NuxtLink
             :to="link.path"
-            class="underlined-link hover:text-primary active:text-primary focus:text-primary px-2 py-2 hidden transition-colors md:inline-block"
+            class="underlined-link px-2 py-2 hidden transition-colors active:text-primary focus:text-primary hover:text-primary md:inline-block"
             :class="{
               'not-[:hover,:focus,:active]:after:border-transparent text-muted':
                 $route.path !== link.path,
@@ -71,15 +71,15 @@ function onPopoverToggle(event: ToggleEvent) {
     </ul>
     <div class="ml-2 mr-1 flex flex-shrink-0 items-center justify-between md:gap-2">
       <div class="md:hidden">
-        <button type="button" class="f-ring ml-4 rounded" popovertarget="mobile-menu">
+        <button type="button" class="ml-4 f-ring rounded" popovertarget="mobile-menu">
           <span aria-hidden="true" class="i-ri:add-line menu-icon h-8 w-8 md:h-6 md:w-6" />
           <span class="sr-only">Open mobile navigation menu</span>
         </button>
-        <div id="mobile-menu" ref="mobileMenuRef" popover class="text-muted bg-accent m-0 border-none h-full max-h-full max-w-full w-full inset-0" @toggle="onPopoverToggle">
+        <div id="mobile-menu" ref="mobileMenuRef" popover class="text-muted m-0 border-none bg-accent h-full max-h-full max-w-full w-full inset-0" @toggle="onPopoverToggle">
           <div class="flex flex-col h-full items-center justify-center">
             <button
               type="button"
-              class="f-ring-accent p-8 rounded right-0 top-0 fixed"
+              class="p-8 f-ring-accent rounded right-0 top-0 fixed"
               popovertarget="mobile-menu"
               popovertargetaction="hide"
             >

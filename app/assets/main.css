@@ -2,6 +2,7 @@
   --background: theme('colors.neutral.950');
   --accent: theme('colors.neutral.900');
   --primary: theme('colors.white');
+  --secondary: theme('colors.neutral.800');
   --muted: 209 213 219;
 }
 
@@ -9,6 +10,7 @@
   --background: theme('colors.white');
   --accent: theme('colors.neutral.100');
   --primary: theme('colors.black');
+  --secondary: theme('colors.neutral.200');
   --muted: 55 65 81;
 }
 

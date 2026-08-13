@@ -19,6 +19,7 @@ catalogs:
     '@pinia/nuxt': ^0.11.3
     '@unocss/eslint-config': ^66.6.7
     '@unocss/nuxt': ^66.6.7
+    '@vee-validate/zod': ^4.15.1
     '@vite-pwa/nuxt': ^1.1.1
     '@vueuse/nuxt': ^14.2.1
     chokidar: ^5.0.0
@@ -37,7 +38,9 @@ catalogs:
     ufo: ^1.6.4
     unocss: ^66.6.7
     unplugin: ^3.0.0
+    vee-validate: ^4.15.1
     vite: ^8.0.0
+    yup: ^1.7.1
     zod: ^4.4.3
   dev:
     '@antfu/eslint-config': ^7.7.3

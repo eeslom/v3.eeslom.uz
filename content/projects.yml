@@ -10,9 +10,37 @@
   order: 1
   items:
     - name: arxiv.uz
-      description: A platform that provides a large collection of student resources in the Uzbek language.
+      description: A platform that provides a large collection of resources in the Uzbek language
       url: https://arxiv.uz/uz/
       image: /img/projects/arxiv.jpg
+    - name: Cinemax Browser
+      description: Explore Movies, TV Shows and People. Download posters and backdrops at highest quality
+      url: https://c.eeslom.uz/
+      image: /img/projects/cinemax-browser.jpg
+    - name: Cinemax
+      description: Watch Movies, TV Shows and Anime for free!
+      url: https://cinemax.eeslom.uz/
+      image: /img/projects/cinemax.jpg
+    - name: QRadar
+      description: Sharing information via QR Code
+      url: https://qradar.pro/
+      image: /img/projects/qradar.jpg
+    - name: Pomodoro
+      description: Fully functional Pomodoro timer app (pet project)
+      url: https://pomodoro-app-islom.netlify.app/
+      image: /img/projects/pomodoro.jpg
+    - name: Imovi
+      description: Free movie watching platform in Uzbek
+      url: https://imovi.uz/
+      image: /img/projects/imovi.jpg
+    - name: Forest Landing page
+      description: Landing page called Forest
+      url: https://thriving-sherbet-99c31a.netlify.app/
+      image: /img/projects/forest-landing.jpg
+    - name: Todo app
+      description: Simple fully function to-do list app (made it when I was learning)
+      url: https://todo-islom.netlify.app/
+      image: /img/projects/todo.jpg
 
 # - category: Libraries
 #   order: 2

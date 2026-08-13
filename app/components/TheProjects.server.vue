@@ -90,7 +90,7 @@ function slug(name: string) {
                 />
                 <span
                   v-if="item.archived"
-                  class="bg-background/80 text-[0.625rem] tracking-[0.15rem] px-2 py-0.5 rounded uppercase left-2 top-2 absolute backdrop-blur-sm"
+                  class="text-[0.625rem] tracking-[0.15rem] px-2 py-0.5 rounded bg-background/80 uppercase left-2 top-2 absolute backdrop-blur-sm"
                 >
                   Archived
                 </span>
@@ -124,7 +124,7 @@ function slug(name: string) {
               :href="item.repo"
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-background/80 hover:bg-background f-ring p-1.5 rounded-full transition-colors right-2 top-2 absolute backdrop-blur-sm"
+              class="p-1.5 f-ring rounded-full bg-background/80 transition-colors right-2 top-2 absolute backdrop-blur-sm hover:bg-background"
               :aria-label="`GitHub repository for ${item.name}`"
             >
               <span
