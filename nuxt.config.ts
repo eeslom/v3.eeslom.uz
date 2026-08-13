@@ -5,7 +5,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 
 import { isTest } from 'std-env'
 
-import { pwa } from './app/config/pwa'
+import { pageMeta } from './modules/shared/page-meta'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -88,6 +88,11 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
+    ...Object.fromEntries(Object.keys(pageMeta).flatMap(path => [
+      [path, { swr: 60 * 60 }],
+      [`${path}/_payload.json`, { swr: 60 * 60 }],
+      [`${path}.md`, { swr: 60 * 60 }],
+    ])),
     '/admin/**': { prerender: false },
     '/blog/**': { swr: 60 * 60 },
     // redirects
@@ -104,6 +109,8 @@ export default defineNuxtConfig({
   },
 
   experimental: {
+    renderJsonPayloads: true,
+    payloadExtraction: true,
     typedPages: true,
     viewTransition: true,
   },
@@ -111,7 +118,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-08-14',
 
   nitro: {
-    preset: 'cloudflare_pages',
     replace: {
       'import.meta.test': isTest,
     },
@@ -129,8 +135,34 @@ export default defineNuxtConfig({
         },
       },
     },
+    future: {
+      nativeSWR: true,
+    },
     prerender: {
       crawlLinks: true,
+      routes: ['/rss.xml'],
+    },
+    hooks: {
+      'prerender:generate': function (route) {
+        if (route.fileName) {
+          route.fileName = route.fileName.replace(
+            /(\.\w{2,3})\/index.html$/,
+            '$1',
+          )
+        }
+
+        if (route.error) {
+          if (route.route.startsWith('/_ipx')) {
+            console.warn('Could not prerender', route.route)
+            // ignore IPX rendering errors
+            delete route.error
+          }
+          else {
+            console.error(route.route, route.error, route)
+            process.exit(1)
+          }
+        }
+      },
     },
   },
 
@@ -223,8 +255,6 @@ export default defineNuxtConfig({
     quality: 80,
     domains: [],
   },
-
-  pwa,
 
   scripts: {
     defaultScriptOptions: {
