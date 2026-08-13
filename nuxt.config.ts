@@ -65,8 +65,8 @@ export default defineNuxtConfig({
       ],
       meta: [
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
-        { name: 'theme-color', media: '(prefers-color-scheme: light)', content: 'white' },
-        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#222222' },
+        // { name: 'theme-color', media: '(prefers-color-scheme: light)', content: 'white' },
+        // { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#222222' },
       ],
     },
     pageTransition: false,
@@ -111,13 +111,13 @@ export default defineNuxtConfig({
     typedPages: true,
     viewTransition: true,
     renderJsonPayloads: true,
-    payloadExtraction: true,
+    payloadExtraction: true
   },
 
   compatibilityDate: '2024-08-14',
 
   nitro: {
-    preset: 'cloudflare_pages',
+    preset: 'cloudflare-pages',
     replace: {
       'import.meta.test': isTest,
     },
@@ -171,11 +171,6 @@ export default defineNuxtConfig({
         'gsap',
         'magic-regexp',
       ],
-    },
-    build: {
-      modulePreload: {
-        polyfill: false,
-      },
     },
     vue: {
       features: {

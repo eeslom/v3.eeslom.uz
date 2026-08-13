@@ -1,5 +1,7 @@
 import { Feed } from 'feed'
 
+import { defineEventHandler } from 'h3'
+
 export default defineEventHandler(async () => {
   if (!import.meta.dev && !import.meta.prerender)
     return
