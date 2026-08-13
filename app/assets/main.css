@@ -1,0 +1,40 @@
+.dark {
+  --background: theme('colors.neutral.950');
+  --accent: theme('colors.neutral.900');
+  --primary: theme('colors.white');
+  --muted: 209 213 219;
+}
+
+.light {
+  --background: theme('colors.white');
+  --accent: theme('colors.neutral.100');
+  --primary: theme('colors.black');
+  --muted: 55 65 81;
+}
+
+:root {
+  background-color: var(--background, theme('colors.neutral.950'));
+  color: var(--primary, theme('colors.white'));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a:not([href]) {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+p + p, p + blockquote {
+  @apply mt-4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
