@@ -40,9 +40,9 @@ export default defineNuxtConfig({
     ],
   },
 
-  $production: {
-    modules: ['nuxt-security'],
-  },
+  // $production: {
+  //   modules: ['nuxt-security'],
+  // },
 
   components: [
     '~/components',
@@ -269,12 +269,6 @@ export default defineNuxtConfig({
   scripts: {
     defaultScriptOptions: {
       bundle: true,
-    },
-  },
-
-  security: {
-    headers: {
-      crossOriginEmbedderPolicy: false,
     },
   },
 })
