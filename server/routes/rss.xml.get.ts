@@ -5,7 +5,7 @@ export default defineEventHandler(async () => {
     return
 
   const feed = new Feed({
-    title: 'Islom Murodov',
+    title: `Islom Murodov`,
     description: 'The personal website of Islom Murodov',
     feed: 'https://eeslom.uz/rss.xml',
     id: 'https://eeslom.uz/',

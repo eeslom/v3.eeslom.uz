@@ -7,8 +7,6 @@ import { isTest } from 'std-env'
 
 import { pwa } from './app/config/pwa'
 
-import { pageMeta } from './modules/shared/page-meta'
-
 const isDev = process.env.NODE_ENV === 'development'
 
 export default defineNuxtConfig({
@@ -90,11 +88,10 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    ...Object.fromEntries(Object.keys(pageMeta).flatMap(path => [
-      [path, { swr: 60 * 60 }],
-      [`${path}/_payload.json`, { swr: 60 * 60 }],
-      [`${path}.md`, { swr: 60 * 60 }],
-    ])),
+    '/': { swr: 60 * 60 },
+    '/projects': { swr: 60 * 60 },
+    '/contact': { swr: 60 * 60 },
+    '/uses': { swr: 60 * 60 },
     '/admin/**': { prerender: false },
     '/blog/**': { swr: 60 * 60 },
     // redirects
@@ -113,6 +110,8 @@ export default defineNuxtConfig({
   experimental: {
     typedPages: true,
     viewTransition: true,
+    renderJsonPayloads: true,
+    payloadExtraction: true,
   },
 
   compatibilityDate: '2024-08-14',
@@ -121,6 +120,11 @@ export default defineNuxtConfig({
     preset: 'cloudflare_pages',
     replace: {
       'import.meta.test': isTest,
+    },
+    esbuild: {
+      options: {
+        target: 'esnext',
+      },
     },
     typescript: {
       tsConfig: {
