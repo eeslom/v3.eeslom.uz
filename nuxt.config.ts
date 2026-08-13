@@ -99,7 +99,7 @@ export default defineNuxtConfig({
   },
 
   sourcemap: {
-    client: true,
+    client: false,
     server: false,
   },
 
@@ -111,13 +111,13 @@ export default defineNuxtConfig({
     typedPages: true,
     viewTransition: true,
     renderJsonPayloads: true,
-    payloadExtraction: true
+    payloadExtraction: true,
   },
 
   compatibilityDate: '2024-08-14',
 
   nitro: {
-    preset: 'cloudflare-pages',
+    preset: 'cloudflare_pages',
     replace: {
       'import.meta.test': isTest,
     },
@@ -133,34 +133,6 @@ export default defineNuxtConfig({
           allowImportingTsExtensions: true,
           noEmit: true,
         },
-      },
-    },
-    future: {
-      nativeSWR: true,
-    },
-    prerender: {
-      crawlLinks: true,
-    },
-    hooks: {
-      'prerender:generate': function (route) {
-        if (route.fileName) {
-          route.fileName = route.fileName.replace(
-            /(\.\w{2,3})\/index.html$/,
-            '$1',
-          )
-        }
-
-        if (route.error) {
-          if (route.route.startsWith('/_ipx')) {
-            console.warn('Could not prerender', route.route)
-            // ignore IPX rendering errors
-            delete route.error
-          }
-          else {
-            console.error(route.route, route.error, route)
-            process.exit(1)
-          }
-        }
       },
     },
   },
