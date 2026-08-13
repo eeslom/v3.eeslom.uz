@@ -31,7 +31,7 @@ useHead({
     { property: 'og:url', content: url },
     // {
     //   property: 'og:image',
-    //   content: `https://roe.dev/_og/s/og.png`,
+    //   content: ``,
     //   key: 'og:image',
     // },
     { property: 'og:image:width', content: '1200' },

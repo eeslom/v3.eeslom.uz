@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     '@nuxtjs/html-validator',
     '@nuxt/image',
     '@nuxtjs/i18n',
+    '@nuxtjs/plausible',
   ],
 
   $development: {
@@ -262,6 +263,10 @@ export default defineNuxtConfig({
   image: {
     quality: 80,
     domains: [],
+  },
+
+  plausible: {
+    domain: 'eeslom.uz',
   },
 
   pwa,
