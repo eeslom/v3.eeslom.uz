@@ -39,7 +39,7 @@ const onSubmit = handleSubmit(async (values) => {
     body: values,
   })
 
-  if (data.value.ok) {
+  if (data.value?.ok) {
     onLoaded(({ JSConfetti }) => {
       const confetti = new JSConfetti()
       confetti.addConfetti({ emojis: ['✅'] })
