@@ -65,7 +65,6 @@ useHead({
 </script>
 
 <template>
-  <VitePwaManifest />
   <div
     id="app"
     class="flex flex-col min-h-screen overflow-x-hidden"
