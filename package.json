@@ -4,7 +4,6 @@
   "packageManager": "pnpm@10.32.1",
   "scripts": {
     "build": "nuxt build",
-    "dev:pwa": "VITE_PLUGIN_PWA=true nuxt dev",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "prepare": "nuxt prepare",
@@ -34,7 +33,6 @@
     "@unocss/eslint-config": "catalog:build",
     "@unocss/nuxt": "catalog:build",
     "@vee-validate/zod": "catalog:build",
-    "@vite-pwa/nuxt": "catalog:build",
     "@vueuse/core": "catalog:frontend",
     "@vueuse/nuxt": "catalog:build",
     "eslint": "catalog:dev",

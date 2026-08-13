@@ -16,7 +16,6 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'magic-regexp/nuxt',
     '@nuxtjs/color-mode',
-    '@vite-pwa/nuxt',
     '@nuxt/eslint',
     '@nuxt/fonts',
     'nuxt-gtag',
@@ -109,8 +108,6 @@ export default defineNuxtConfig({
   },
 
   experimental: {
-    renderJsonPayloads: true,
-    payloadExtraction: true,
     typedPages: true,
     viewTransition: true,
   },
