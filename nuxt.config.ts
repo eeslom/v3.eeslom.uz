@@ -275,10 +275,6 @@ export default defineNuxtConfig({
   security: {
     headers: {
       crossOriginEmbedderPolicy: false,
-      contentSecurityPolicy: {
-        'script-src-attr': ['\'self\'', '\'unsafe-inline\''],
-        'script-src': ['\'self\'', '\'unsafe-inline\'', 'https://static.cloudflareinsights.com'],
-      },
     },
   },
 })
