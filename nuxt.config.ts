@@ -88,10 +88,6 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { swr: 60 * 60 },
-    '/projects': { swr: 60 * 60 },
-    '/contact': { swr: 60 * 60 },
-    '/uses': { swr: 60 * 60 },
     '/admin/**': { prerender: false },
     '/blog/**': { swr: 60 * 60 },
     // redirects
@@ -99,7 +95,7 @@ export default defineNuxtConfig({
   },
 
   sourcemap: {
-    client: false,
+    client: true,
     server: false,
   },
 
@@ -110,8 +106,6 @@ export default defineNuxtConfig({
   experimental: {
     typedPages: true,
     viewTransition: true,
-    renderJsonPayloads: true,
-    payloadExtraction: true,
   },
 
   compatibilityDate: '2024-08-14',
@@ -134,6 +128,9 @@ export default defineNuxtConfig({
           noEmit: true,
         },
       },
+    },
+    prerender: {
+      crawlLinks: true,
     },
   },
 
