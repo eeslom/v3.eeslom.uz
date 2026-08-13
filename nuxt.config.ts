@@ -7,6 +7,8 @@ import { isTest } from 'std-env'
 
 import { pwa } from './app/config/pwa'
 
+import { pageMeta } from './modules/shared/page-meta'
+
 const isDev = process.env.NODE_ENV === 'development'
 
 export default defineNuxtConfig({
@@ -88,9 +90,11 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { swr: 60 * 60 },
-    '/projects': { swr: 60 * 60 },
-    '/uses': { swr: 60 * 60 },
+    ...Object.fromEntries(Object.keys(pageMeta).flatMap(path => [
+      [path, { swr: 60 * 60 }],
+      [`${path}/_payload.json`, { swr: 60 * 60 }],
+      [`${path}.md`, { swr: 60 * 60 }],
+    ])),
     '/admin/**': { prerender: false },
     '/blog/**': { swr: 60 * 60 },
     // redirects
@@ -114,12 +118,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-08-14',
 
   nitro: {
-    preset: 'cloudflare-pages',
-    esbuild: {
-      options: {
-        target: 'esnext',
-      },
-    },
+    preset: 'cloudflare_pages',
     replace: {
       'import.meta.test': isTest,
     },
@@ -137,7 +136,6 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: true,
-      autoSubfolderIndex: false,
     },
     hooks: {
       'prerender:generate': function (route) {
