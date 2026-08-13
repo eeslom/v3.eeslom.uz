@@ -27,9 +27,6 @@ catalogs:
     '@nuxtjs/i18n':
       specifier: ^10.6.0
       version: 10.6.0
-    '@nuxtjs/plausible':
-      specifier: ^4.0.0
-      version: 4.0.0
     '@pinia/nuxt':
       specifier: ^0.11.3
       version: 0.11.3
@@ -188,9 +185,6 @@ importers:
       '@nuxtjs/i18n':
         specifier: catalog:build
         version: 10.6.0(db0@0.3.4)(eslint@10.0.3(jiti@2.6.1))(ioredis@5.9.2)(magicast@0.5.2)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))(rollup@4.57.1)(typescript@5.9.3)(vite@8.0.0(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(terser@5.39.0)(yaml@2.9.0))(vue@3.5.30(typescript@5.9.3))
-      '@nuxtjs/plausible':
-        specifier: catalog:build
-        version: 4.0.0(magicast@0.5.2)
       '@pinia/nuxt':
         specifier: catalog:build
         version: 0.11.3(magicast@0.5.2)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))
@@ -1884,9 +1878,6 @@ packages:
     resolution: {integrity: sha512-20YXYOcc8cSh/pSpNgj+MHAn11qUbsFR1IBJh6qYtRPVhUUmgqJ1DyMu39MB+uEYYL/fsberL2ByMYrFaROslw==}
     engines: {node: '>=20.11.1'}
 
-  '@nuxtjs/plausible@4.0.0':
-    resolution: {integrity: sha512-R2G9BktBVSCG0nDNBSVlC8jDbsYBgrbqmn8wWisiIF9lKfRq99NwIvtw/DLuwexJT5pCYPvBflIof4NS4ZX8Xg==}
-
   '@ota-meshi/ast-token-store@0.3.0':
     resolution: {integrity: sha512-XRO0zi2NIUKq2lUk3T1ecFSld1fMWRKE6naRFGkgkdeosx7IslyUKNv5Dcb5PJTja9tHJoFu0v/7yEpAkrkrTg==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
@@ -3024,9 +3015,6 @@ packages:
   '@pkgr/core@0.2.9':
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
-
-  '@plausible-analytics/tracker@0.4.6':
-    resolution: {integrity: sha512-nbu6xGgSP6jeYuoVklZBzucUnIpo75tVu3Kr+R0EDycVKaMC/jF5Q/YCaM/8gR4fPZ1IDcXt6FdBJFZ1uZwEPA==}
 
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
@@ -9797,15 +9785,6 @@ snapshots:
       - vite
       - vue
 
-  '@nuxtjs/plausible@4.0.0(magicast@0.5.2)':
-    dependencies:
-      '@nuxt/kit': 4.4.2(magicast@0.5.2)
-      '@plausible-analytics/tracker': 0.4.6
-      defu: 6.1.7
-      ufo: 1.6.4
-    transitivePeerDependencies:
-      - magicast
-
   '@ota-meshi/ast-token-store@0.3.0': {}
 
   '@oxc-minify/binding-android-arm-eabi@0.117.0':
@@ -10391,8 +10370,6 @@ snapshots:
     optional: true
 
   '@pkgr/core@0.2.9': {}
-
-  '@plausible-analytics/tracker@0.4.6': {}
 
   '@polka/url@1.0.0-next.28': {}
 

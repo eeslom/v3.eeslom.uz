@@ -29,7 +29,6 @@
     "@nuxtjs/color-mode": "catalog:build",
     "@nuxtjs/html-validator": "catalog:build",
     "@nuxtjs/i18n": "catalog:build",
-    "@nuxtjs/plausible": "catalog:build",
     "@pinia/nuxt": "catalog:build",
     "@types/node": "catalog:dev",
     "@unocss/eslint-config": "catalog:build",
