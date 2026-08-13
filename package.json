@@ -59,7 +59,6 @@
     "vite": "catalog:build",
     "vue": "catalog:frontend",
     "vue-tsc": "catalog:dev",
-    "yup": "catalog:build",
     "zod": "catalog:build"
   },
   "resolutions": {

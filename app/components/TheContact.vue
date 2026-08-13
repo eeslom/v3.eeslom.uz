@@ -9,7 +9,7 @@ const { onLoaded } = useScriptNpm({
   version: '0.12.0',
   scriptOptions: {
     use() {
-      return { JSConfetti: window.JSConfetti }
+      return { JSConfetti: (window as any).JSConfetti }
     },
   },
 })
@@ -55,17 +55,20 @@ const onSubmit = handleSubmit(async (values) => {
     <section>
       <form class="flex flex-col gap-4 max-w-xl w-full" @submit.prevent="onSubmit">
         <div>
-          <input v-model="name" placeholder="Name" inp type="text" name="name" v-bind="nameAttrs">
+          <label for="name" class="sr-only">Name</label>
+          <input id="name" v-model="name" placeholder="Name" inp type="text" name="name" v-bind="nameAttrs">
           <span class="text-sm text-red-500">{{ errors.name }}</span>
         </div>
 
         <div>
-          <input v-model="email" inp placeholder="Email" type="email" name="email" v-bind="emailAttrs">
+          <label for="email" class="sr-only">Email</label>
+          <input id="email" v-model="email" inp placeholder="Email" type="email" name="email" v-bind="emailAttrs">
           <span class="text-sm text-red-500">{{ errors.email }}</span>
         </div>
 
         <div>
-          <textarea v-model="message" class="min-h-10ch" inp placeholder="Message" type="text" name="message" v-bind="messageAttrs" />
+          <label for="message" class="sr-only">Message</label>
+          <textarea id="message" v-model="message" class="min-h-10ch" inp placeholder="Message" type="text" name="message" v-bind="messageAttrs" />
           <span class="text-sm text-red-500">{{ errors.message }}</span>
         </div>
 

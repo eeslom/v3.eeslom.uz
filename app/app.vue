@@ -74,7 +74,7 @@ useHead({
   >
     <a
       href="#main-content"
-      class="focus:bg-primary focus:text-background sr-only focus:font-medium focus:px-4 focus:py-2 focus:rounded focus:left-4 focus:top-4 focus:absolute focus:z-50 focus:not-sr-only"
+      class="sr-only focus:text-background focus:font-medium focus:px-4 focus:py-2 focus:rounded focus:bg-primary focus:left-4 focus:top-4 focus:absolute focus:z-50 focus:not-sr-only"
     >
       Skip to main content
     </a>
