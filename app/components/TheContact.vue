@@ -69,7 +69,7 @@ const onSubmit = handleSubmit(async (values) => {
           <span class="text-sm text-red-500">{{ errors.message }}</span>
         </div>
 
-        <button type="submit" btn class="w-max" :disabled="isSubmitting">
+        <button type="submit" btn :disabled="isSubmitting">
           Send
           <span v-if="isSubmitting" class="i-svg-spinners-90-ring-with-bg" />
         </button>

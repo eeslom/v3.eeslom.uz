@@ -33,9 +33,9 @@ export default defineConfig({
       'f-tray-item':
         'outline-none rounded-full focus-visible:ring-2 focus-visible:ring-primary/80 focus-visible:ring-offset-1 focus-visible:ring-offset-accent',
       'btn':
-        'rounded w-full bg-secondary px-3 py-2 text-base cursor-pointer disabled:opacity-50 disabled:cursor-default',
+        'w-full bg-secondary px-3 py-2 text-base cursor-pointer disabled:opacity-50 disabled:cursor-default',
       'inp':
-        'rounded w-full bg-secondary px-3 py-2 text-base f-ring-inset',
+        'w-full bg-secondary px-3 py-2 text-base f-ring-inset',
     },
   ],
   variants: [

@@ -109,8 +109,6 @@ export default defineNuxtConfig({
   experimental: {
     typedPages: true,
     viewTransition: true,
-    renderJsonPayloads: true,
-    payloadExtraction: true,
   },
 
   compatibilityDate: '2024-08-14',
