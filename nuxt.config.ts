@@ -40,10 +40,6 @@ export default defineNuxtConfig({
     ],
   },
 
-  // $production: {
-  //   modules: ['nuxt-security'],
-  // },
-
   components: [
     '~/components',
   ],
@@ -196,7 +192,7 @@ export default defineNuxtConfig({
       },
     },
     nodeTsConfig: {
-      include: ['../scripts'],
+      // include: ['../scripts'],
       compilerOptions: {
         allowImportingTsExtensions: true,
         noEmit: true,
