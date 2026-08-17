@@ -32,6 +32,10 @@ const menu = computed(() => [
     name: 'Contact',
     path: '/contact',
   },
+  {
+    name: 'Blog',
+    path: '/blog',
+  },
   ...(showAdminLink.value ? [{ name: 'Admin', path: '/admin' }] : []),
 ])
 

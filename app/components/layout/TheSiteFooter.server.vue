@@ -28,7 +28,7 @@ const year = new Date().getFullYear()
             :href="link"
             rel="me noopener noreferrer"
             target="_blank"
-            class="f-ring touch-action-manipulation p-1 rounded-full inline-flex items-center"
+            class="touch-action-manipulation p-1 f-ring rounded-full inline-flex items-center"
             :aria-label="`${name} (opens in new tab)`"
           >
             <span
