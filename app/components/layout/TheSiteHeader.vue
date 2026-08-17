@@ -2,12 +2,23 @@
 import { appCreator } from '~/constants'
 
 const config = useRuntimeConfig()
+const redirect = import.meta.dev
+  ? `&redirect_uri=http://localhost:3000/auth/github`
+  : ''
+const loginURL = `https://github.com/login/oauth/authorize?client_id=${config.public.githubClientId}${redirect}&scope=read:org`
 
 const mobileMenuRef = ref<HTMLElement | null>(null)
 const showMenu = ref(false)
 
 const showAdminLink = ref(false)
-
+onMounted(() => {
+  try {
+    showAdminLink.value = localStorage.getItem('admin-visited') === '1'
+  }
+  catch {
+    // storage unavailable (private browsing etc.)
+  }
+})
 const menu = computed(() => [
   {
     name: 'Home',
@@ -70,6 +81,37 @@ function onPopoverToggle(event: ToggleEvent) {
       </template>
     </ul>
     <div class="ml-2 mr-1 flex flex-shrink-0 items-center justify-between md:gap-2">
+      <div
+        v-if="$auth.status === 'pending'"
+        class="flex flex-shrink-0 w-[2rem] items-center justify-center"
+      >
+        <span
+          class="i-svg-spinners:90-ring-with-bg h-6 w-6"
+          aria-hidden="true"
+        />
+        <span class="sr-only"> Loading </span>
+      </div>
+      <NuxtLink
+        v-else-if="$auth.status === 'logged-out'"
+        :to="loginURL"
+        class="leading-none p-1 f-ring border-2 border-transparent rounded-full border-solid flex-shrink-0 w-[2rem] active:border-primary hover:border-primary"
+        @click="$auth.status = 'pending'"
+      >
+        <span
+          class="i-ri:login-circle-line h-5 w-5"
+          aria-hidden="true"
+        />
+        <span class="sr-only"> Login </span>
+      </NuxtLink>
+      <button
+        v-else-if="$auth.status === 'logged-in'"
+        type="button"
+        class="f-ring rounded-full flex-shrink-0 w-[2rem] relative"
+        @click="$auth.logout"
+      >
+        <img :src="$auth.user.avatar" class="rounded-full h-8 w-8 md:h-6 md:w-6" :alt="`${$auth.user.name}'s avatar'`">
+        <span class="sr-only"> Log out {{ $auth.user.name }} </span>
+      </button>
       <div class="md:hidden">
         <button type="button" class="ml-4 f-ring rounded" popovertarget="mobile-menu">
           <span aria-hidden="true" class="i-ri:add-line menu-icon h-8 w-8 md:h-6 md:w-6" />

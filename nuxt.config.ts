@@ -81,7 +81,15 @@ export default defineNuxtConfig({
   runtimeConfig: {
     admin: {},
     public: {
-      githubClientId: '',
+      githubClientId: process.env.GITHUB_CLIENT_ID,
+    },
+    github: {
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    },
+    sessionPassword: process.env.SESSION_PASSWORD,
+    pushover: {
+      token: process.env.PUSHOVER_TOKEN,
+      userKey: process.env.PUSHOVER_USER_KEY,
     },
     botToken: process.env.BOT_TOKEN,
   },
@@ -108,6 +116,8 @@ export default defineNuxtConfig({
   },
 
   experimental: {
+    payloadExtraction: false,
+    renderJsonPayloads: true,
     typedPages: true,
     viewTransition: true,
   },
@@ -115,6 +125,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-08-14',
 
   nitro: {
+    preset: 'cloudflare_pages',
     replace: {
       'import.meta.test': isTest,
     },
@@ -168,6 +179,7 @@ export default defineNuxtConfig({
       include: [
         'gsap',
         'magic-regexp',
+        'partysocket',
       ],
     },
     vue: {
@@ -185,7 +197,7 @@ export default defineNuxtConfig({
       },
     },
     nodeTsConfig: {
-      // include: ['../scripts'],
+      include: ['../scripts'],
       compilerOptions: {
         allowImportingTsExtensions: true,
         noEmit: true,
