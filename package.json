@@ -47,6 +47,7 @@
     "lenis": "catalog:build",
     "magic-regexp": "catalog:build",
     "magic-string": "catalog:build",
+    "markdown-it": "catalog:build",
     "mlly": "catalog:build",
     "nuxt": "catalog:build",
     "nuxt-gtag": "catalog:build",

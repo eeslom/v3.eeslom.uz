@@ -81,7 +81,7 @@ export default defineNuxtConfig({
   content: {
     database: {
       type: 'd1',
-      bindingName: 'content',
+      bindingName: 'DB',
     },
     build: {
       markdown: {
@@ -151,7 +151,7 @@ export default defineNuxtConfig({
       content: {
         database: {
           type: 'd1',
-          bindingName: 'content',
+          bindingName: 'DB',
         },
       },
     },
