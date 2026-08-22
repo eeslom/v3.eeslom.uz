@@ -30,5 +30,4 @@ export const links: SocialLink[] = [
     icon: 'i-ri:youtube-fill',
     link: 'https://www.youtube.com/@eeslom',
   },
-
 ]

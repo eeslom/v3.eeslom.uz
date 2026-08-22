@@ -1,8 +1,6 @@
 export interface PageMeta {
   title: string
   description?: string
-  /** Short label used in llms.txt page index. Pages without this are excluded from llms.txt. */
-  llmLabel?: string
 }
 
 export const pageMeta: Record<string, PageMeta> = {
@@ -13,11 +11,13 @@ export const pageMeta: Record<string, PageMeta> = {
   '/projects': {
     title: 'Projects',
     description: 'Open source projects, libraries and sites by Islom Murodov',
-    llmLabel: 'Open source projects, libraries and sites',
   },
-  '/uses': {
-    title: 'Uses',
-    description: 'Tools, software, and hardware that Islom Murodov uses',
-    llmLabel: 'Tools and software',
+  '/contact': {
+    title: 'Contact Me',
+    description: 'Contact me',
+  },
+  '/use': {
+    title: 'Use',
+    description: 'Tools, software, and hardware I am using',
   },
 }

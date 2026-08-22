@@ -17,12 +17,12 @@ export default defineNuxtConfig({
     'magic-regexp/nuxt',
     '@nuxtjs/color-mode',
     '@nuxt/eslint',
-    '@nuxt/fonts',
     'nuxt-gtag',
     '@nuxt/scripts',
     '@nuxtjs/html-validator',
     '@nuxt/image',
     '@nuxtjs/i18n',
+    '@nuxt/content',
   ],
 
   $development: {
@@ -78,6 +78,23 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
 
+  content: {
+    experimental: {
+      sqliteConnector: 'native',
+    },
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            default: 'vitesse-light',
+            dark: 'vitesse-dark',
+          },
+          langs: ['js', 'ts', 'html', 'css', 'vue', 'bash', 'json'],
+        },
+      },
+    },
+  },
+
   runtimeConfig: {
     admin: {},
     public: {
@@ -94,7 +111,7 @@ export default defineNuxtConfig({
     botToken: process.env.BOT_TOKEN,
   },
 
-  routeRules: {
+  routeRules: isDev ? {} : {
     ...Object.fromEntries(Object.keys(pageMeta).flatMap(path => [
       [path, { swr: 60 * 60 }],
       [`${path}/_payload.json`, { swr: 60 * 60 }],
@@ -116,7 +133,7 @@ export default defineNuxtConfig({
   },
 
   experimental: {
-    payloadExtraction: false,
+    payloadExtraction: true,
     renderJsonPayloads: true,
     typedPages: true,
     viewTransition: true,
@@ -149,6 +166,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: ['/rss.xml'],
+      autoSubfolderIndex: false,
     },
     hooks: {
       'prerender:generate': function (route) {
@@ -220,12 +238,6 @@ export default defineNuxtConfig({
     },
   },
 
-  fonts: {
-    families: [
-      { name: 'Inter', preload: true },
-    ],
-  },
-
   gtag: {
     id: 'G-L4L7VHMGCC',
   },
@@ -255,6 +267,11 @@ export default defineNuxtConfig({
         name: 'English',
         code: 'en',
         file: 'en.json',
+      },
+      {
+        name: 'Uzbek',
+        code: 'uz',
+        file: 'uz.json',
       },
     ],
     defaultLocale: 'en',

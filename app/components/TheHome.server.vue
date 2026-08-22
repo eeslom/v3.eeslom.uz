@@ -1,13 +1,10 @@
 <script setup lang="ts">
 // const [] = await Promise.all([])
+const { data: page } = await useAsyncData('page', async () => queryCollection('page').path('/').first())
 </script>
 
 <template>
-  <div>
-    <section class="text-lg max-w-[37.50rem] md:text-xl">
-      <p>
-        I am a Full Stack Developer
-      </p>
-    </section>
-  </div>
+  <section v-if="page" class="text-lg w-full md:text-xl">
+    <ContentRenderer :value="page" />
+  </section>
 </template>

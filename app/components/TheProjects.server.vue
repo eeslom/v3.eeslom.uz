@@ -55,9 +55,9 @@ function slug(name: string) {
         {{ category.category }}
       </h2>
 
-      <div class="mt-4 w-screen overflow-visible -mx-4 md:-mx-12">
+      <div class="mx-auto mt-4 w-screen overflow-visible -mx-4 md:-mx-12">
         <ul
-          class="px-4 list-none gap-6 grid grid-cols-1 divide-secondary divide-x divide-y md:px-12 lg:grid-cols-3 sm:grid-cols-2"
+          class="px-4 list-none gap-6 grid divide-secondary divide-x divide-y md:px-12 lg:grid-cols-3 sm:grid-cols-2"
         >
           <li
             v-for="item in category.items"

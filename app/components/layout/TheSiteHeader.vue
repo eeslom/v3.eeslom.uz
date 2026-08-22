@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { appCreator } from '~/constants'
+import { appName } from '~/constants'
 
 const config = useRuntimeConfig()
 const redirect = import.meta.dev
@@ -51,18 +51,18 @@ function onPopoverToggle(event: ToggleEvent) {
 </script>
 
 <template>
-  <nav aria-label="Main navigation" class="px-4 py-4 flex flex-row uppercase items-center justify-between md:tracking-[0.15rem] md:px-12 md:py-8 md:pt-4">
+  <nav aria-label="Main navigation" class="mx-auto px-4 py-4 flex flex-row w-full items-center justify-between md:px-12 md:py-8 md:pt-4">
     <ul class="text-sm flex flex-grow flex-row items-center justify-between md:text-base md:flex-grow-0">
       <li>
         <NuxtLink
-          class="underlined-link mr-6 py-2"
+          class="font-bold underlined-link mr-6 py-2 uppercase"
           to="/"
           :class="{
             'not-[:hover,:focus,:active]:after:border-transparent':
               $route.path !== '/',
           }"
         >
-          {{ appCreator }}
+          {{ appName }}
           <span class="ml-1">
             <span class="sr-only">is currently in {{ }}</span>
             {{ }}
@@ -73,7 +73,7 @@ function onPopoverToggle(event: ToggleEvent) {
         <li>
           <NuxtLink
             :to="link.path"
-            class="underlined-link px-2 py-2 hidden transition-colors active:text-primary focus:text-primary hover:text-primary md:inline-block"
+            class="underlined-link px-2 py-2 hidden uppercase transition-colors active:text-primary focus:text-primary hover:text-primary md:inline-block"
             :class="{
               'not-[:hover,:focus,:active]:after:border-transparent text-muted':
                 $route.path !== link.path,
@@ -136,7 +136,7 @@ function onPopoverToggle(event: ToggleEvent) {
               <span class="sr-only"> Close mobile navigation menu </span>
             </button>
             <nav aria-label="Mobile navigation">
-              <ul class="text-2xl tracking-[0.15rem] flex flex-col gap-6 max-w-xl uppercase items-center">
+              <ul class="text-2xl flex flex-col gap-6 max-w-xl uppercase items-center">
                 <li v-for="link in menu" :key="link.name">
                   <NuxtLink
                     class="underlined-link px-2 py-2"

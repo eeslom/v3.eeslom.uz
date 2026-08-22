@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import { links } from '#shared/utils/links'
 import { appName } from '~/constants'
-
-const year = new Date().getFullYear()
 </script>
 
 <template>
@@ -11,13 +9,13 @@ const year = new Date().getFullYear()
       class="before:content mx-auto px-4 py-2 text-center max-w-[50rem] relative before:mx-auto before:my-4 before:border-t-2 before:border-gray-300 before:border-solid before:w-4 before:block before:content-empty dark:before:border-gray-700"
     >
       <small>
-        &copy; 2026-{{ year }} {{ appName }}.
         <a
           class="underlined-link"
           href="https://creativecommons.org/licenses/by-sa/4.0/"
         >
           CC BY-SA 4.0
         </a>
+        2026-PRESENT &copy; {{ appName }}.
       </small>
       <ul class="my-4 flex flex-row gap-2 items-center justify-center">
         <li

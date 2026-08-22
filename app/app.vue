@@ -84,10 +84,6 @@ useHead({
 </template>
 
 <style>
-html.dark {
-  color-scheme: dark;
-}
-
 .highlight-islands [data-island] {
   border: 1px solid red;
 }
