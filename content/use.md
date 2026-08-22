@@ -46,9 +46,3 @@ Switched to [Brave](https://brave.com/).
 - [Raycast](https://raycast.com/) - Spotlight replacement
 - [Insomnia](https://insomnia.rest/) - HTTP Client
 - [WakaTime](https://wakatime.com/@eeslom) - Coding management
-
-| Key | Type      | Description |
-| --- | --------- | ----------- |
-| 1   | Wonderful | Table       |
-| 2   | Wonderful | Data        |
-| 3   | Wonderful | Website     |

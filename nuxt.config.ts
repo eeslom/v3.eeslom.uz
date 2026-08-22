@@ -1,4 +1,5 @@
 import type { HmrOptions } from 'vite'
+import { resolve as resolvePath } from 'node:path'
 import process from 'node:process'
 
 import { defineNuxtConfig } from 'nuxt/config'
@@ -23,6 +24,18 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/i18n',
     '@nuxt/content',
+    function (_options, nuxt) {
+      nuxt.hook('nitro:init', (nitro) => {
+        if (nitro.options.preset !== 'cloudflare-pages')
+          return
+
+        nitro.options.alias ||= {}
+        nitro.options.alias['#content/local-adapter'] = resolvePath(
+          nuxt.options.rootDir,
+          'server/utils/cloudflare-content-local-adapter.ts',
+        )
+      })
+    },
   ],
 
   $development: {
@@ -146,14 +159,6 @@ export default defineNuxtConfig({
     preset: 'cloudflare_pages',
     replace: {
       'import.meta.test': isTest,
-    },
-    runtimeConfig: {
-      content: {
-        database: {
-          type: 'd1',
-          bindingName: 'DB',
-        },
-      },
     },
     esbuild: {
       options: {

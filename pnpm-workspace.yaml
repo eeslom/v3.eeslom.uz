@@ -22,10 +22,8 @@ catalogs:
     '@unocss/nuxt': ^66.6.7
     '@vee-validate/zod': ^4.15.1
     '@vueuse/nuxt': ^14.2.1
-    better-sqlite3: ^13.0.3
     chokidar: ^5.0.0
     feed: ^6.0.0
-    gray-matter: ^4.0.3
     gsap: ^3.15.0
     h3: ^1.15.5
     js-yaml: ^5.2.3
@@ -51,6 +49,7 @@ catalogs:
     '@types/node': ^25.5.0
     eslint: ^10.0.3
     eslint-plugin-format: ^2.0.1
+    gray-matter: ^4.0.3
     pathe: ^2.0.3
     typescript: ^5.9.3
     vue-tsc: ^3.2.6

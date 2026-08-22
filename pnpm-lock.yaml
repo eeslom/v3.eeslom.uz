@@ -51,9 +51,6 @@ catalogs:
     feed:
       specifier: ^6.0.0
       version: 6.0.0
-    gray-matter:
-      specifier: ^4.0.3
-      version: 4.0.3
     gsap:
       specifier: ^3.15.0
       version: 3.15.0
@@ -115,6 +112,9 @@ catalogs:
     eslint-plugin-format:
       specifier: ^2.0.1
       version: 2.0.1
+    gray-matter:
+      specifier: ^4.0.3
+      version: 4.0.3
     pathe:
       specifier: ^2.0.3
       version: 2.0.3
@@ -243,7 +243,7 @@ importers:
         specifier: catalog:build
         version: 6.0.0
       gray-matter:
-        specifier: catalog:build
+        specifier: catalog:dev
         version: 4.0.3
       gsap:
         specifier: catalog:build

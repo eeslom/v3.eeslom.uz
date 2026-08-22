@@ -1,9 +1,13 @@
 {
+  "name": "eeslom-uz",
+  "pages_build_output_dir": "./dist",
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "content",
       "database_id": "4a0fccbe-ad71-433e-a8e1-b2201e3eb465"
     }
-  ]
+  ],
+  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2026-08-04"
 }
