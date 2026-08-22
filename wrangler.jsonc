@@ -5,6 +5,5 @@
       "database_name": "content",
       "database_id": "4a0fccbe-ad71-433e-a8e1-b2201e3eb465"
     }
-  ],
-  "compatibility_flags": ["nodejs_compat"]
+  ]
 }

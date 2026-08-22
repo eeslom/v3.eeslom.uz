@@ -79,6 +79,10 @@ export default defineNuxtConfig({
   },
 
   content: {
+    database: {
+      type: 'd1',
+      bindingName: 'content',
+    },
     build: {
       markdown: {
         highlight: {
@@ -142,6 +146,14 @@ export default defineNuxtConfig({
     preset: 'cloudflare_pages',
     replace: {
       'import.meta.test': isTest,
+    },
+    runtimeConfig: {
+      content: {
+        database: {
+          type: 'd1',
+          bindingName: 'content',
+        },
+      },
     },
     esbuild: {
       options: {
