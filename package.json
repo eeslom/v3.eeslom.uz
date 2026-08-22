@@ -36,6 +36,7 @@
     "@vee-validate/zod": "catalog:build",
     "@vueuse/core": "catalog:frontend",
     "@vueuse/nuxt": "catalog:build",
+    "better-sqlite3": "catalog:build",
     "eslint": "catalog:dev",
     "eslint-plugin-format": "catalog:dev",
     "feed": "catalog:build",

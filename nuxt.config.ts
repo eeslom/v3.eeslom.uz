@@ -79,9 +79,6 @@ export default defineNuxtConfig({
   },
 
   content: {
-    experimental: {
-      sqliteConnector: 'native',
-    },
     build: {
       markdown: {
         highlight: {
@@ -197,7 +194,6 @@ export default defineNuxtConfig({
       include: [
         'gsap',
         'magic-regexp',
-        'partysocket',
       ],
     },
     vue: {
